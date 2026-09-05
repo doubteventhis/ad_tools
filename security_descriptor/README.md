@@ -1,3 +1,5 @@
+pure vibes
+
 parse base64 encoded nTSecurityDescriptor blobs into a human readable format. output is similair to dacledit.py. takes in a single blob or will parse a text (ldap dump) file and extract them.
 
 ```
