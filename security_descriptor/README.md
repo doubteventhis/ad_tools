@@ -20,7 +20,7 @@ options:
   --ignore-sid SID      also treat this exact SID as default/expected (repeatable)
 ```
 
-it can attempt some analysis by hiding default and built-in principals when parsing files. administrators_sd.txt is the base64 encoded ntSecurityDescriptor:
+it can attempt some analysis by hiding default and built-in principals when parsing files. administrators_sd.txt is the base64 encoded ntSecurityDescriptor for the Administrators object:
 ```
 $ python3 sdparse.py -f administrators_sd.txt -i                    
 ========================================================================                                                                    
@@ -66,4 +66,4 @@ Control : DACL_PRESENT, DACL_AUTO_INHERITED, SACL_AUTO_INHERITED, DACL_PROTECTED
 
 ```
 
-it will also parse the entire ldap dump from tools like the ldapsearch bof (similair to bofhound). built and tested inside an ctf env. likely won't scale well.
+built and tested inside an ctf env. likely won't scale well.
