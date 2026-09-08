@@ -1,6 +1,6 @@
 pure vibes
 
-parse base64 encoded nTSecurityDescriptor blobs into a human readable format. output is similair to dacledit.py. takes in a single blob or will parse a text (ldap dump) file and extract them.
+parse base64 encoded nTSecurityDescriptor blobs into a human readable format. output is similair to impackets dacledit.py. takes in a single blob or will parse a text file (such as the output of the ldapsearch bof) and auto extract them.
 
 ```
 $ python3 sdparse.py -h
@@ -20,7 +20,7 @@ options:
   --ignore-sid SID      also treat this exact SID as default/expected (repeatable)
 ```
 
-it can attempt some analysis by hiding default and built-in principals when parsing files. administrators_sd.txt is the base64 encoded ntSecurityDescriptor for the Administrators object:
+it can attempt some analysis by hiding default and built-in principals when parsing files (administrators_sd.txt is the base64 encoded ntSecurityDescriptor for the Administrators object):
 ```
 $ python3 sdparse.py -f administrators_sd.txt -i                    
 ========================================================================                                                                    
@@ -66,4 +66,4 @@ Control : DACL_PRESENT, DACL_AUTO_INHERITED, SACL_AUTO_INHERITED, DACL_PROTECTED
 
 ```
 
-built and tested inside an ctf env. likely won't scale well.
+built and tested inside ctf/exam envs. likely won't scale well.
